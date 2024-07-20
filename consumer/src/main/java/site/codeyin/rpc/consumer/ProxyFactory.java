@@ -1,0 +1,17 @@
+package site.codeyin.rpc.consumer;
+
+import java.lang.reflect.Proxy;
+
+/**
+ * 反射工厂：获取代理对象
+ *
+ * @author yinjie
+ * @date 2024-07-20 15:49
+ */
+public class ProxyFactory {
+    @SuppressWarnings("unchecked")
+    public static <T> T getProxy(Class<T> interfaceClass) {
+        return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(),
+                new Class[]{interfaceClass}, new ProxyInvocationHandler(interfaceClass));
+    }
+}
