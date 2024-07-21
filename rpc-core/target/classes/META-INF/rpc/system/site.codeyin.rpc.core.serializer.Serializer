@@ -1,0 +1,4 @@
+jdk=site.codeyin.rpc.core.serializer.JdkSerializer
+json=site.codeyin.rpc.core.serializer.JsonSerializer
+kryo=site.codeyin.rpc.core.serializer.KryoSerializer
+hessian=site.codeyin.rpc.core.serializer.HessianSerializer
