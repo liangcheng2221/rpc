@@ -1,9 +1,12 @@
-package site.codeyin.rpc.common.model;
+package site.codeyin.rpc.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.codeyin.rpc.core.serializer.Serializer;
+import site.codeyin.rpc.core.serializer.SerializerFactory;
+import site.codeyin.rpc.core.serializer.SerializerKeys;
 
 import java.io.Serializable;
 

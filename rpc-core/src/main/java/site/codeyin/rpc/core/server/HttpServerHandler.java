@@ -1,24 +1,29 @@
-package site.codeyin.rpc.producer.server;
+package site.codeyin.rpc.core.server;
 
 
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
-import site.codeyin.rpc.common.model.RpcRequest;
-import site.codeyin.rpc.common.model.RpcResponse;
-import site.codeyin.rpc.common.serializer.JdkSerializer;
-import site.codeyin.rpc.common.serializer.Serializer;
-import site.codeyin.rpc.producer.cache.LocalRegistry;
+import site.codeyin.rpc.core.RpcApplication;
+import site.codeyin.rpc.core.model.RpcRequest;
+import site.codeyin.rpc.core.model.RpcResponse;
+import site.codeyin.rpc.core.register.LocalRegistry;
+import site.codeyin.rpc.core.serializer.JdkSerializer;
+import site.codeyin.rpc.core.serializer.Serializer;
+import site.codeyin.rpc.core.serializer.SerializerFactory;
 
 import java.io.IOException;
 
 /**
+ * VertXHttpServer服务的请求处理器
+ *
  * @author yinjie
  * @date 2024-07-20 15:37
  */
 public class HttpServerHandler implements Handler<HttpServerRequest> {
-    final Serializer serializer = new JdkSerializer();
+    // 从配置文件中获取需要的序列化器
+    final Serializer serializer = SerializerFactory.getSerializer(RpcApplication.getRpcConfig().getSerializer());
 
     @Override
     public void handle(HttpServerRequest request) {

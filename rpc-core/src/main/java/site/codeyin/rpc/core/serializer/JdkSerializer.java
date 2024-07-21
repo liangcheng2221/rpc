@@ -1,4 +1,4 @@
-package site.codeyin.rpc.common.serializer;
+package site.codeyin.rpc.core.serializer;
 
 
 import java.io.*;
