@@ -1,4 +1,4 @@
-package site.codeyin.rpc.producer.server;
+package site.codeyin.rpc.core.server;
 
 /**
  * 服务接口

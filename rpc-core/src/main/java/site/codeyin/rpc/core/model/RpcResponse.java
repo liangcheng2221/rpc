@@ -1,4 +1,4 @@
-package site.codeyin.rpc.common.model;
+package site.codeyin.rpc.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

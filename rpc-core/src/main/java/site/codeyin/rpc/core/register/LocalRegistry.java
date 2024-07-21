@@ -1,17 +1,17 @@
-package site.codeyin.rpc.producer.cache;
+package site.codeyin.rpc.core.register;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 本地服务注册对象
+ * 本地服务注册对象（服务对象）
  *
  * @author yinjie
  * @date 2024-07-20 16:44
  */
 public class LocalRegistry {
     /**
-     * 注册信息存储
+     * 注册信息存储 服务全限定名 => 服务实例类对象
      */
     private static final Map<String, Class<?>> map = new ConcurrentHashMap<>();
 

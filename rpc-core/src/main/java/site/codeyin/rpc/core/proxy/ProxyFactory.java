@@ -1,4 +1,4 @@
-package site.codeyin.rpc.consumer;
+package site.codeyin.rpc.core.proxy;
 
 import java.lang.reflect.Proxy;
 

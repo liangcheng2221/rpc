@@ -1,13 +1,14 @@
-package site.codeyin.rpc.consumer;
+package site.codeyin.rpc.core.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import cn.hutool.http.HttpUtil;
-import site.codeyin.rpc.common.model.RpcRequest;
-import site.codeyin.rpc.common.model.RpcResponse;
-import site.codeyin.rpc.common.serializer.JdkSerializer;
-import site.codeyin.rpc.common.serializer.Serializer;
-import site.codeyin.rpc.common.service.UserService;
+import site.codeyin.rpc.core.RpcApplication;
+import site.codeyin.rpc.core.model.RpcRequest;
+import site.codeyin.rpc.core.model.RpcResponse;
+import site.codeyin.rpc.core.serializer.JdkSerializer;
+import site.codeyin.rpc.core.serializer.Serializer;
+import site.codeyin.rpc.core.serializer.SerializerFactory;
+
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -22,7 +23,7 @@ public class ProxyInvocationHandler implements InvocationHandler {
     // 服务实例类对象
     private final Class<?> interfaceClass;
     // 序列化器
-    private final Serializer serializer = new JdkSerializer();
+    private final Serializer serializer = SerializerFactory.getSerializer(RpcApplication.getRpcConfig().getSerializer());
 
     public ProxyInvocationHandler(Class<?> interfaceClass) {
         this.interfaceClass = interfaceClass;

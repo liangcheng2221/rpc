@@ -1,7 +1,9 @@
 package site.codeyin.rpc.consumer;
 
-import site.codeyin.rpc.common.model.User;
-import site.codeyin.rpc.common.service.UserService;
+import site.codeyin.rpc.core.RpcApplication;
+import site.codeyin.rpc.core.config.RpcConfig;
+import site.codeyin.rpc.core.serializer.SerializerFactory;
+import site.codeyin.rpc.core.serializer.SerializerKeys;
 
 /**
  * 测试调用
@@ -11,9 +13,11 @@ import site.codeyin.rpc.common.service.UserService;
  */
 public class ConsumerMain {
     public static void main(String[] args) {
-        UserService userServiceProxy = ProxyFactory.getProxy(UserService.class);
-        User user = new User();
-        user.setName("yinjie");
-        System.out.println(userServiceProxy.getUser(user));
+        RpcConfig config = new RpcConfig();
+        config.setSerializer(SerializerKeys.HESSIAN);
+        RpcApplication.init(config);
+        RpcConfig rpcConfig = RpcApplication.getRpcConfig();
+        System.out.println(SerializerFactory.getSerializer(rpcConfig.getSerializer()));
+        System.out.println(rpcConfig);
     }
 }
