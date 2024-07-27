@@ -44,20 +44,7 @@ public class SpiLoader {
      */
     private static final String[] SCAN_DIRS = new String[]{RPC_SYSTEM_SPI_DIR, RPC_CUSTOM_SPI_DIR};
 
-    /**
-     * 动态加载的类列表
-     */
-    private static final List<Class<?>> LOAD_CLASS_LIST = Collections.singletonList(Serializer.class);
 
-    /**
-     * 加载所有类型
-     */
-    public static void loadAll() {
-        log.info("加载所有 SPI");
-        for (Class<?> interfaceClass : LOAD_CLASS_LIST) {
-            load(interfaceClass);
-        }
-    }
 
     /**
      * 获取某个接口的实例
@@ -127,7 +114,7 @@ public class SpiLoader {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        loadAll();
+        load(Serializer.class);
         System.out.println(loaderMap);
         Serializer serializer = getInstance(Serializer.class, "jdk");
         System.out.println(serializer);

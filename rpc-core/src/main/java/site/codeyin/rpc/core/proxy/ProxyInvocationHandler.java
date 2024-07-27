@@ -3,8 +3,12 @@ package site.codeyin.rpc.core.proxy;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import site.codeyin.rpc.core.RpcApplication;
+import site.codeyin.rpc.core.config.RpcConfig;
 import site.codeyin.rpc.core.model.RpcRequest;
 import site.codeyin.rpc.core.model.RpcResponse;
+import site.codeyin.rpc.core.model.ServiceMetaInfo;
+import site.codeyin.rpc.core.register.Registry;
+import site.codeyin.rpc.core.register.RegistryFactory;
 import site.codeyin.rpc.core.serializer.JdkSerializer;
 import site.codeyin.rpc.core.serializer.Serializer;
 import site.codeyin.rpc.core.serializer.SerializerFactory;
@@ -12,6 +16,7 @@ import site.codeyin.rpc.core.serializer.SerializerFactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.util.List;
 
 /**
  * 反射调用
@@ -39,8 +44,12 @@ public class ProxyInvocationHandler implements InvocationHandler {
                 .methodName(method.getName())
                 .build();
 
+        //  从注册中心获取符合版本的服务信息
+        RpcConfig rpcConfig = RpcApplication.getRpcConfig();
+        Registry registry = RegistryFactory.getRegistry(rpcConfig.getRegistryConfig().getRegistry());
+        List<ServiceMetaInfo> serviceMetaInfos = registry.serviceDiscovery(interfaceClass.getName() + ":" + rpcConfig.getVersion());
         // 发起请求
-        HttpResponse response = HttpRequest.post("http://localhost:8080")
+        HttpResponse response = HttpRequest.post(serviceMetaInfos.get(0).getServiceAddress())
                 .body(serializer.serialize(rpcRequest))
                 .execute();
 

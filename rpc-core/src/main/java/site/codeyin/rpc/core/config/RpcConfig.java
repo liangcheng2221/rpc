@@ -42,4 +42,10 @@ public class RpcConfig {
      */
     private String serializer = SerializerKeys.JDK;
 
+    /**
+     * 注冊中心配置
+     */
+    private RegistryConfig registryConfig = new RegistryConfig();
+
+
 }

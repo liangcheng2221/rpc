@@ -12,14 +12,14 @@ import site.codeyin.rpc.core.spi.SpiLoader;
 public class SerializerFactory {
 
     static {
-        SpiLoader.loadAll();
+        SpiLoader.load(Serializer.class);
     }
 
 
     /**
      * 获取序列化器
      *
-     * @param serializerKey 序列化器键
+     * @param serializerKey 序列化器键 {@link site.codeyin.rpc.core.serializer.SerializerKeys}
      * @return 序列化器
      */
     public static Serializer getSerializer(String serializerKey) {
