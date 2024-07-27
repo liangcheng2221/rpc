@@ -1,0 +1,2 @@
+jdk=site.codeyin.rpc.core.serializer.JdkSerializer
+json=site.codeyin.rpc.core.serializer.JsonSerializer

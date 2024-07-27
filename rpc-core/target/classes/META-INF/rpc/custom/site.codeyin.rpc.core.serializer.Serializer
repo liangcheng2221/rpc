@@ -1,0 +1,2 @@
+kryo=site.codeyin.rpc.core.serializer.KryoSerializer
+hessian=site.codeyin.rpc.core.serializer.HessianSerializer
