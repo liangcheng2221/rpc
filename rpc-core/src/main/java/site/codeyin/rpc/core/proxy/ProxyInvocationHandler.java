@@ -46,32 +46,32 @@ public class ProxyInvocationHandler implements InvocationHandler {
                 .methodName(method.getName())
                 .build();
 
-        //  从注册中心获取符合版本的服务信息
-        RpcConfig rpcConfig = RpcApplication.getRpcConfig();
-        Registry registry = RegistryFactory.getRegistry(rpcConfig.getRegistryConfig().getRegistry());
-        List<ServiceMetaInfo> serviceMetaInfos = registry.serviceDiscovery(interfaceClass.getName() + ":" + rpcConfig.getVersion());
+        try {
+            //  从注册中心获取符合版本的服务信息
+            RpcConfig rpcConfig = RpcApplication.getRpcConfig();
+            Registry registry = RegistryFactory.getRegistry(rpcConfig.getRegistryConfig().getRegistry());
 
-        ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
-        serviceMetaInfo.setServiceName(interfaceClass.getName());
-        serviceMetaInfo.setServiceVersion(RpcConstant.DEFAULT_SERVICE_VERSION);
-        serviceMetaInfo.setServiceHost("localhost");
-        serviceMetaInfo.setServicePort(rpcConfig.getServerPort());
+            ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
+            serviceMetaInfo.setServiceName(interfaceClass.getName());
+            List<ServiceMetaInfo> serviceMetaInfos = registry.serviceDiscovery(serviceMetaInfo.getServiceKey());
 
-
-        RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, serviceMetaInfo);
+            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, serviceMetaInfos.get(0));
 
 //        // 发起请求
 //        HttpResponse response = HttpRequest.post(serviceMetaInfos.get(0).getServiceAddress())
 //                .body(serializer.serialize(rpcRequest))
 //                .execute();
 
-        // 反序列化响应对象
+            // 反序列化响应对象
 //        RpcResponse rpcResponse = serializer.deserialize(response.bodyBytes(), RpcResponse.class);
 
-        if (rpcResponse.getException() != null) {
-            throw rpcResponse.getException();
-        }
+            if (rpcResponse.getException() != null) {
+                throw rpcResponse.getException();
+            }
 
-        return rpcResponse.getData();
+            return rpcResponse.getData();
+        } catch (Exception e) {
+            throw new RuntimeException("调用失败");
+        }
     }
 }
