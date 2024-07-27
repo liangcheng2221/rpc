@@ -7,7 +7,7 @@ import site.codeyin.rpc.core.constant.RpcConstant;
 /**
  * 服务实例对象（注册到注册中心所需要的对象）
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 20:54
  */
 @Data

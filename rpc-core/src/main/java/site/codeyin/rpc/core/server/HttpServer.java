@@ -3,7 +3,7 @@ package site.codeyin.rpc.core.server;
 /**
  * 服务接口
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 15:33
  */
 public interface HttpServer {

@@ -6,7 +6,7 @@ import java.io.*;
 /**
  * JDK序列化器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 16:12
  */
 public class JdkSerializer implements Serializer {

@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * 响应数据类型
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 16:28
  */
 @Data

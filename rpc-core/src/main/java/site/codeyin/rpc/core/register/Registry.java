@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 服务注册接口
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 21:06
  */
 public interface Registry {

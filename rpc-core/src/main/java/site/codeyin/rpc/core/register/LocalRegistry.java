@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 本地服务注册对象（服务对象）
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 16:44
  */
 public class LocalRegistry {

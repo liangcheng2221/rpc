@@ -6,7 +6,7 @@ import site.codeyin.rpc.core.spi.SpiLoader;
 /**
  * 序列化工厂
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 13:37
  */
 public class SerializerFactory {

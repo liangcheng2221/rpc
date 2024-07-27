@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 /**
  * 基于 ZooKeeper 实现服务注册
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 21:11
  */
 @Slf4j

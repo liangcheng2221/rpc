@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Hessian序列化器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 13:34
  */
 public class HessianSerializer implements Serializer {

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Json序列化器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 13:20
  */
 public class JsonSerializer implements Serializer {

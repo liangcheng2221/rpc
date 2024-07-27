@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Kryo序列化器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 13:17
  */
 public class KryoSerializer implements Serializer {

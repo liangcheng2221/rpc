@@ -5,7 +5,7 @@ import java.lang.reflect.Proxy;
 /**
  * 反射工厂：获取代理对象
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 15:49
  */
 public class ProxyFactory {

@@ -6,7 +6,7 @@ import site.codeyin.rpc.core.register.RegistryKeys;
 /**
  * 注册中心配置对象（可以使用自定义注册服务）
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 21:01
  */
 @Data

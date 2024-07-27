@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * SPI加载器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 14:19
  */
 @Slf4j

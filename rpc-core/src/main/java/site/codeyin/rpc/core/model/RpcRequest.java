@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * 请求数据类型
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 15:58
  */
 @Data

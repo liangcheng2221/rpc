@@ -1,4 +1,4 @@
-package site.codeyin.rpc.core.server;
+package site.codeyin.rpc.core.server.http;
 
 
 import io.vertx.core.Handler;
@@ -18,7 +18,7 @@ import java.io.IOException;
 /**
  * VertXHttpServer服务的请求处理器
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-20 15:37
  */
 public class HttpServerHandler implements Handler<HttpServerRequest> {

@@ -6,7 +6,7 @@ import site.codeyin.rpc.core.spi.SpiLoader;
 /**
  * 服务注册中心工厂
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 22:28
  */
 public class RegistryFactory {

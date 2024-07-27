@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 服务注册本地缓存
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-23 22:09
  */
 public class RegistryServiceCache {

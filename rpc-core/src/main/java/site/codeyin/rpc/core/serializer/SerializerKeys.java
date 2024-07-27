@@ -3,7 +3,7 @@ package site.codeyin.rpc.core.serializer;
 /**
  * 序列化键
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 13:36
  */
 public interface SerializerKeys {

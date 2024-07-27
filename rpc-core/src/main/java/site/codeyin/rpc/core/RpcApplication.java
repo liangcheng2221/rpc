@@ -11,7 +11,7 @@ import site.codeyin.rpc.core.utils.ConfigUtils;
 /**
  * Rpc框架应用
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 10:44
  */
 @Slf4j

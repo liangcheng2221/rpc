@@ -11,7 +11,7 @@ import cn.hutool.setting.yaml.YamlUtil;
 /**
  * 配置操作类
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 10:37
  */
 public class ConfigUtils {

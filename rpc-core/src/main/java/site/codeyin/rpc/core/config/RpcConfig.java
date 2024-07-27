@@ -6,7 +6,7 @@ import site.codeyin.rpc.core.serializer.SerializerKeys;
 /**
  * rpc相关配置类
  *
- * @author yinjie
+ * @author <a href="https://github.com/liangcheng2221">yinjie</a>
  * @date 2024-07-21 10:34
  */
 @Data

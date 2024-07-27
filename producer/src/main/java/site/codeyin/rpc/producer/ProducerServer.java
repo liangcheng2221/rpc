@@ -8,7 +8,9 @@ import site.codeyin.rpc.core.register.LocalRegistry;
 import site.codeyin.rpc.core.register.Registry;
 import site.codeyin.rpc.core.register.RegistryFactory;
 import site.codeyin.rpc.core.server.HttpServer;
-import site.codeyin.rpc.core.server.VertXHttpServer;
+import site.codeyin.rpc.core.server.http.VertXHttpServer;
+import site.codeyin.rpc.core.server.tcp.VertxTcpClient;
+import site.codeyin.rpc.core.server.tcp.VertxTcpServer;
 import site.codeyin.rpc.producer.serviceImpl.UserServiceImpl;
 
 /**
@@ -33,7 +35,7 @@ public class ProducerServer {
 //        LocalInstanceRegistry.register(UserService.class.getName(), new UserServiceImpl());
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
         // 启动 web 服务
-        HttpServer httpServer = new VertXHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }
